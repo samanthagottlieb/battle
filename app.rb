@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
+  attr_reader :p_1, :p_2
   enable :sessions
 
   get '/' do
@@ -8,9 +9,12 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
+    # @p_1 = params[:name_1]
+    # @p_2 = params[:name_2]
+    # erb(:play)
     session[:name_1] = params[:name_1]
     session[:name_2] = params[:name_2]
-    redirect('/play')
+    redirect '/play'
   end
 
   get '/play' do

@@ -1,11 +1,4 @@
-require_relative '../../app.rb'
-
-describe Battle, type: :feature do
-  it "Who will be going to battle?" do
-    visit '/'
-    expect(page).to have_content("Who will be going to battle?")
-  end
-
+feature 'Enter player names' do
   it 'allows players to input names, submit form and see names on screen' do
     visit '/'
     fill_in('name_1', with: 'Constantine')
