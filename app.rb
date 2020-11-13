@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Battle < Sinatra::Base
   attr_reader :p_1, :p_2
@@ -23,7 +24,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @p_1 = $player_1
     @p_2 = $player_2
-    @p_1.attack(p_2)
+    Game.new.attack(@p_2)
     erb(:attack)
   end
 
