@@ -1,8 +1,9 @@
-<h1> Let the battle begin! </h1>
+<h1> Time for battle... </h1>
 
-<%=@game.current_turn.name%>'s turn
+<%= @game.current_turn.name%>'s turn
 
-<%=@game.player_1.name%>: <%=@game.player_1.hp%>hp vs. <%=@game.player_2.name%>: <%=@game.player_2.hp%>hp
+<%= @game.player_1.name%>: <%=@game.player_1.hp%>HP vs. <%=@game.player_2.name%>: <%=@game.player_2.hp%>HP
 
-<button type='button'>Attack!</button>
-<a href='/attack'>OK</a>
+<form action='/attack'>
+  <input type='submit' value='Attack!'>
+</form>
